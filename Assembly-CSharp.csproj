@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{15103989-958D-2320-8BAD-74948CA1BE9F}</ProjectGuid>
+    <ProjectGuid>{200DA301-8964-75C9-BCE1-C27CE4263595}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,7 +59,6 @@
     <Analyzer Include="C:\Users\kroe\Documents\Unity Installs\2022.3.11f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Komet.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>

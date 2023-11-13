@@ -19,15 +19,4 @@ public class Komet : MonoBehaviour
         Vector3 pos = transform.position;
         transform.position = new Vector3(pos.x, pos.y - speed * Time.deltaTime, pos.z);
     }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject player = collision.gameObject;
-        player.GetComponent<Player>().Die();
-    }
 }
