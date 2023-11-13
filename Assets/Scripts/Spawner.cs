@@ -5,6 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public float spawnTime;
+    public float screenWidth;
+    public GameObject meteorPrefab;
 
     private float timer = 0;
 
@@ -21,8 +23,13 @@ public class Spawner : MonoBehaviour
         if(timer > spawnTime)
         {
             // zufällige Pos. finden
+            Vector3 spawnPos = transform.position;
+            float xSpawnPos = Random.Range(-screenWidth / 2, screenWidth / 2);
+            spawnPos.x = xSpawnPos;
             // Meteor erstellen
-            Debug.Log("Meteor wird gespawnt (noch nicht wirklich)");
+            Instantiate(meteorPrefab, spawnPos, Quaternion.identity);
+
+            Debug.Log("Meteor wird gespawnt (jetzt gleich schon)");
             timer = 0;
         }
     }

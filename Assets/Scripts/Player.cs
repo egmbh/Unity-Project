@@ -29,4 +29,11 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public void Die()
+    {
+        // Spieler stirbt
+        Destroy(gameObject);
+        // Spiel wird beendet
+    }
 }
