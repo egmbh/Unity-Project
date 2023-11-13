@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
 
     public float screenWidth;
 
+    private float timer = 0;
+    public float spawnTime;
+
+    public GameObject bulletPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +33,12 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(pos.x + speed * Time.deltaTime, pos.y, pos.z);
         }
 
+        timer += Time.deltaTime;
+        if(timer >= spawnTime)
+        {
+            Instantiate(bulletPrefab, pos, Quaternion.identity);
+            timer = 0;
+        }
     }
 
     public void Die()

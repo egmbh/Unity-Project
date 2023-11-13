@@ -27,7 +27,10 @@ public class Komet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject player = collision.gameObject;
-        player.GetComponent<Player>().Die();
+        GameObject other = collision.gameObject;
+        if(other.name == "LePlayeur")
+        {
+            other.GetComponent<Player>().Die();
+        }
     }
 }
