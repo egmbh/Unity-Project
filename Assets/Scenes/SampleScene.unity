@@ -423,6 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   screenWidth: 7.5
+  spawnTime: 1
+  bulletPrefab: {fileID: 2282164374271682124, guid: e219bf8dacc5e78428f5c1326ed0b231, type: 3}
 --- !u!212 &1499315426
 SpriteRenderer:
   m_ObjectHideFlags: 0
