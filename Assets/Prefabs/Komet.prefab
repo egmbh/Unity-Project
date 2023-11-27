@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3575558025520168515}
   - component: {fileID: 6087266748212652931}
   - component: {fileID: 5972758615047910249}
+  - component: {fileID: -2003967732029565043}
   m_Layer: 0
   m_Name: Komet
   m_TagString: Untagged
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.990566, g: 0.032707386, b: 0.032707386, a: 1}
+  m_Sprite: {fileID: -2841164692358491213, guid: c3756479bc0b8024dbed1ed7f6de3a0e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71cceb19464db0347945627f325d76f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  explosion: {fileID: 5187492998403551889, guid: 7c8678285b499c047bb09c6176c677e4, type: 3}
 --- !u!58 &6087266748212652931
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +163,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-2003967732029565043
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138334893916513478}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 5637859786937553246, guid: c3756479bc0b8024dbed1ed7f6de3a0e, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

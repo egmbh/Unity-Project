@@ -1,36 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    public float spawnTime;
-    public float screenWidth;
+    public float spawnWaitTime = 2;
+    private float timeSinceLastSpawn = 0;
+    public float waitDecreasePerMeteor = 0.1f;
+    public float minWaitTime = 0.5f;
+
     public GameObject meteorPrefab;
 
-    private float timer = 0;
+    public float screenWidth = 10;
+
+    public float meteorSpeed = 15;
+    public float speedIncreasePerMeteor = 0.1f;
+    public float maxSpeed = 30f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if(timer > spawnTime)
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn >= spawnWaitTime)
         {
-            // zufällige Pos. finden
-            Vector3 spawnPos = transform.position;
-            float xSpawnPos = Random.Range(-screenWidth / 2, screenWidth / 2);
-            spawnPos.x = xSpawnPos;
-            // Meteor erstellen
-            Instantiate(meteorPrefab, spawnPos, Quaternion.identity);
+            //zufällige Pos für Meteor finden
+            var pos = transform.position;
+            pos.x = Random.Range(pos.x - screenWidth / 2, pos.x + screenWidth / 2);
+            //Meteor spawnen
+            GameObject meteor = Instantiate(meteorPrefab, pos, Quaternion.identity);
+            meteor.GetComponent<Komet>().SetSpeed(meteorSpeed);
+            //Timer zurücksetzen
+            timeSinceLastSpawn = 0;
+            //SpawnTime verringern
+            spawnWaitTime = Mathf.Max(spawnWaitTime - waitDecreasePerMeteor, minWaitTime);
 
-            Debug.Log("Meteor wird gespawnt (jetzt gleich schon)");
-            timer = 0;
+            //Speed erhöhen
+            meteorSpeed = Mathf.Min(meteorSpeed + speedIncreasePerMeteor, maxSpeed);
         }
     }
 }
